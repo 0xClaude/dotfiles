@@ -1,7 +1,6 @@
 {
 	description = "NixOS";
 
-
 	inputs = {
 		nixpkgs.url = "nixpkgs/nixos-25.05";
 		home-manager = {
