@@ -120,9 +120,8 @@
   programs.firefox.enable = true;
 
   programs.zsh = {
-    enable = true;
     autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
+    enable = true;
     ohMyZsh = {
       enable = true;
       plugins = [
@@ -132,6 +131,10 @@
       ];
       theme = "af-magic";
     };
+    sessionVariables = {
+      EDITOR = "vim";
+    };
+    syntaxHighlighting.enable = true;
   };
   
   # List packages installed in system profile.
