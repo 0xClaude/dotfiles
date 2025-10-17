@@ -110,7 +110,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.claude = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "gamemode" ];
+    extraGroups = [ "wheel" "gamemode" "audio" ];
     packages = with pkgs; [
       tree
     ];
