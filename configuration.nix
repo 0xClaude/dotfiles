@@ -131,9 +131,6 @@
       ];
       theme = "af-magic";
     };
-    sessionVariables = {
-      EDITOR = "vim";
-    };
     syntaxHighlighting.enable = true;
   };
   

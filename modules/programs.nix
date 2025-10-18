@@ -12,6 +12,7 @@
     qalculate-qt
     qbittorrent
     slack
+    speedtest-cli
     thunderbird
     ticktick
     veracrypt
