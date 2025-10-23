@@ -57,6 +57,7 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_MEASUREMENT = "de_DE.UTF-8";
     LC_IDENTIFICATION = "de_DE.UTF-8";
+    LANG = "en_US.UTF-8";
   };
 
   # Add Japanese input
