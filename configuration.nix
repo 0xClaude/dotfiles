@@ -42,22 +42,10 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.supportedLocales = [
-    "en_US.UTF-8/UTF-8"
+  i18n.extraLocales = [
     "de_DE.UTF-8/UTF-8"
-    "lb_LU.UTF-8/UTF-8"
+    "lb_LU/UTF-8"
   ];
-
-  extraLocaleSettingsPackages = [
-    (pkgs.glibcLocales.override {
-      locales = [
-        "en_US.UTF-8/UTF-8"
-        "de_DE.UTF-8/UTF-8"
-        "lb_LU.UTF-8/UTF-8"
-      ];
-    })
-  ];
-
 
   # Add Japanese input
   i18n.inputMethod = {
