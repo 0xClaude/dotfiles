@@ -152,8 +152,10 @@
     wget  
   ];
 
+  programs.vim.defaultEditor = true;
+
   # Install steam
-  steam.enable = true;
+  programs.steam.enable = true;
 
   fonts.packages = with pkgs; [
 	  nerd-fonts.jetbrains-mono
