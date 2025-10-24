@@ -20,6 +20,8 @@
   programs.ssh.enable = true;
   services.ssh-agent.enable = true;
 
+  programs.vim.defaultEditor = true;
+
   home.packages = with pkgs; [
     # Add programs here
   ];

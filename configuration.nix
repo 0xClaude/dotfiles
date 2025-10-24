@@ -159,7 +159,10 @@
     })
   ];
 
-  programs.vim.defaultEditor = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   # Install steam
   programs.steam.enable = true;
