@@ -12,7 +12,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-
 		silentSDDM = {
 			url = "github:uiriansan/SilentSDDM";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +19,9 @@
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, ... }: {
+
 		nixosConfigurations.nebula = nixpkgs.lib.nixosSystem {
+
 			system = "x86_64-linux";
 
 			specialArgs = {
@@ -44,7 +45,6 @@
 					};
 				}
 			];
-
 		};
 	};
 }
