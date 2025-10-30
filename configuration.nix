@@ -15,6 +15,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Use the latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
 
