@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     discord
     fzf
+    filezilla
     joplin-desktop
     libreoffice
     mullvad-vpn
