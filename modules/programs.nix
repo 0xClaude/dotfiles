@@ -6,6 +6,7 @@
     discord
     fzf
     filezilla
+    google-chrome
     joplin-desktop
     libreoffice
     mullvad-vpn
