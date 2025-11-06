@@ -16,6 +16,7 @@
     slack
     speedtest-cli
     thunderbird
+    tig
     ticktick
     veracrypt
     vorta
