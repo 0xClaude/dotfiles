@@ -3,6 +3,7 @@
 { 
   home.packages = with pkgs; [
     bat
+    emacs
     nix-search
     ncdu
     nh
