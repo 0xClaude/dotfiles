@@ -29,7 +29,7 @@
 
       ;; --- 2. Theme Configuration ---
       (load-theme 'catppuccin t)
-      (set-face-attribute 'default nil :font "Iosevka" :height 100)
+
 
       ;; --- 3. Keybindings ---
       (use-package vterm
