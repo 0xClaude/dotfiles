@@ -14,6 +14,7 @@
       ep.use-package
       ep.vertico
       ep.which-key
+      ep.nix-mode
     ]);
 
     extraConfig = ''
