@@ -3,12 +3,6 @@
 # This attribute set will be imported into your home-manager configuration
 {
   programs.emacs = {
-    # 1. Enable Emacs configuration
-    enable = true;
-    
-    # 2. Add packages 
-    package = pkgs.emacs29; # Specifies the Emacs version to use
-    
     extraPackages = ep: [
       ep.vterm            # Terminal emulator inside Emacs
       ep.magit            # Git porcelain
