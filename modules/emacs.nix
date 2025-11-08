@@ -28,7 +28,7 @@
       (column-number-mode 1)
 
       ;; --- 2. Theme Configuration ---
-      (load-theme 'catppucinx t)
+      (load-theme 'catppucin t)
       (set-face-attribute 'default nil :font "Iosevka" :height 100)
 
       ;; --- 3. Keybindings ---
