@@ -3,17 +3,26 @@
 # This attribute set will be imported into your home-manager configuration
 {
   programs.emacs = {
-        
+    # 1. Enable Emacs configuration
+    enable = true;
+    
+    # 2. Add packages 
+    package = pkgs.emacs29; # Specifies the Emacs version to use
+    
     extraPackages = ep: [
       ep.vterm            # Terminal emulator inside Emacs
       ep.magit            # Git porcelain
       ep.material-theme   # A popular, clean theme
+      
+      # --- New Essential Packages ---
+      ep.use-package      # Configuration macro for better organization
+      ep.vertico          # Vertical, single-line completion UI
+      ep.which-key        # Displays available keybindings after a prefix
     ];
 
     # 3. All Lisp configuration consolidated into 'extraConfig'.
-    # This code runs after packages are installed and loaded.
     extraConfig = ''
-      ;; --- Basic UI Configuration ---
+      ;; --- 1. Basic UI Configuration ---
       (setq initial-scratch-message nil)     ; Clear the *scratch* buffer
       (setq inhibit-startup-message t)       ; Hide the splash screen
 
@@ -24,19 +33,32 @@
       ;; Show column numbers in the mode line
       (column-number-mode 1)
 
-      ;; --- Theme Configuration ---
-      ;; Note: This path is often needed for themes to load correctly in HM setups
+      ;; --- 2. Theme Configuration ---
       (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/elpa/"))
       (load-theme 'material t)
       (set-face-attribute 'default nil :font "Iosevka SS08" :height 100)
 
-      ;; --- Keybindings (Relying on Packages) ---
-      
-      ;; Global keybinding for VTerm (embedded terminal)
-      (global-set-key (kbd "C-c C-v") 'vterm)
-      
-      ;; Bind Magit-status to C-x g 
-      (global-set-key (kbd "C-x g") 'magit-status)
+      ;; --- 3. Keybindings (Magit and VTerm) ---
+      (global-set-key (kbd "C-c C-v") 'vterm) ; VTerm
+      (global-set-key (kbd "C-x g") 'magit-status) ; Magit
+
+      ;; --- 4. Vertico (Modern Completion) Configuration ---
+      (use-package vertico
+        :init
+        (vertico-mode)
+        ;; Configure to display a maximum of 20 candidates
+        (setq vertico-cycle t)
+        (setq vertico-resize t)
+        (setq vertico-count 20)) 
+
+      ;; --- 5. Which-Key Configuration ---
+      (use-package which-key
+        :init
+        (which-key-mode)
+        ;; Set a slightly longer delay so it doesn't pop up too fast
+        (setq which-key-idle-delay 0.5)
+        (setq which-key-sort-order 'which-key-key-order)
+        )
     '';
   };
 }
