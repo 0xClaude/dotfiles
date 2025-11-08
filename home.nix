@@ -8,6 +8,7 @@
   imports = [
     ./modules/system.nix
     ./modules/programs.nix
+    ./modules/emacs.nix
   ];
 
   programs.git = {
