@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     libvterm # Required for vterm
-    iosevka  # Font for Emacs
   ];
 
   programs.emacs = {
