@@ -3,12 +3,16 @@
 # This attribute set will be imported into your home-manager configuration
 {
   programs.emacs = {
+    # 1. Enable Emacs configuration (MANDATORY)
+    enable = true;
+    
+    # 2. Specify the Emacs package (MANDATORY)
+    package = pkgs.emacs; 
+    
     extraPackages = ep: [
       ep.vterm            # Terminal emulator inside Emacs
       ep.magit            # Git porcelain
       ep.material-theme   # A popular, clean theme
-      
-      # --- New Essential Packages ---
       ep.use-package      # Configuration macro for better organization
       ep.vertico          # Vertical, single-line completion UI
       ep.which-key        # Displays available keybindings after a prefix
@@ -32,15 +36,22 @@
       (load-theme 'material t)
       (set-face-attribute 'default nil :font "Iosevka SS08" :height 100)
 
-      ;; --- 3. Keybindings (Magit and VTerm) ---
-      (global-set-key (kbd "C-c C-v") 'vterm) ; VTerm
-      (global-set-key (kbd "C-x g") 'magit-status) ; Magit
+      ;; --- 3. Keybindings (The reliable way, inside :config) ---
+      
+      ;; VTerm: Keybinding set ONLY after vterm has fully loaded and is defined.
+      (use-package vterm
+        :config
+        (global-set-key (kbd "C-c C-v") 'vterm))
+      
+      ;; Magit: Keybinding set ONLY after magit has fully loaded and is defined.
+      (use-package magit
+        :config
+        (global-set-key (kbd "C-x g") 'magit-status))
 
       ;; --- 4. Vertico (Modern Completion) Configuration ---
       (use-package vertico
         :init
         (vertico-mode)
-        ;; Configure to display a maximum of 20 candidates
         (setq vertico-cycle t)
         (setq vertico-resize t)
         (setq vertico-count 20)) 
@@ -49,7 +60,6 @@
       (use-package which-key
         :init
         (which-key-mode)
-        ;; Set a slightly longer delay so it doesn't pop up too fast
         (setq which-key-idle-delay 0.5)
         (setq which-key-sort-order 'which-key-key-order)
         )
