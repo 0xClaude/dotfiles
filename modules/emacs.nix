@@ -7,11 +7,12 @@
     extraPackages = ep: [
       ep.vterm # Terminal emulator inside Emacs
       ep.material-theme # A popular, clean theme
+      ep.magit
     ];
 
     # 3. Define the main configuration (init.el content)
     # This Lisp ensures a clean startup and sets the theme.
-    preInit = ''
+    extraConfig = ''
       ;; --- Basic UI Configuration ---
       (setq initial-scratch-message nil)     ; Clear the *scratch* buffer
       (setq inhibit-startup-message t)       ; Hide the splash screen
