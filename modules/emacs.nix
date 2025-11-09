@@ -20,18 +20,14 @@
       ;; Ensure use-package is loaded
       (require 'use-package)
 
-      ;; --- 1. Basic UI Configuration ---
       (setq initial-scratch-message nil)
       (setq inhibit-startup-message t)
       (global-display-line-numbers-mode 1)
       (setq display-line-numbers-type 'relative)
       (column-number-mode 1)
 
-      ;; --- 2. Theme Configuration ---
       (load-theme 'catppuccin t)
-
-
-      ;; --- 3. Keybindings ---
+      
       (use-package vterm
         :config
         (global-set-key (kbd "C-c C-v") 'vterm))
@@ -40,7 +36,6 @@
         :config
         (global-set-key (kbd "C-x g") 'magit-status))
 
-      ;; --- 4. Vertico Configuration ---
       (use-package vertico
         :init
         (vertico-mode)
@@ -49,13 +44,16 @@
         (setq vertico-resize t)
         (setq vertico-count 20))
 
-      ;; --- 5. Which-Key Configuration ---
       (use-package which-key
         :init
         (which-key-mode)
         :config
         (setq which-key-idle-delay 0.5)
         (setq which-key-sort-order 'which-key-key-order))
+
+       (global-set-key (kbd "C-c l") #'org-store-link)
+       (global-set-key (kbd "C-c a") #'org-agenda)
+       (global-set-key (kbd "C-c c") #'org-capture)
     '';
   };
 }
