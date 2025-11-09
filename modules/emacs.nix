@@ -9,7 +9,6 @@
     package = (pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages (ep: [
       ep.vterm
       ep.magit
-      ep.catppuccin
       ep.use-package
       ep.vertico
       ep.which-key
