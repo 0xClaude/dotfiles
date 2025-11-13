@@ -3,6 +3,7 @@
 { 
 
   home.packages = with pkgs; [
+    abiword
     discord
     fzf
     filezilla
