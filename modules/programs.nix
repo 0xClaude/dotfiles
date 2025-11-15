@@ -11,6 +11,7 @@
     google-chrome
     joplin-desktop
     libreoffice
+    mpv
     mullvad-vpn
     nextcloud-client
     qalculate-qt
