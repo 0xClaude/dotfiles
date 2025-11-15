@@ -9,6 +9,7 @@
     fzf
     filezilla
     google-chrome
+    imagemagick
     joplin-desktop
     libreoffice
     mpv
