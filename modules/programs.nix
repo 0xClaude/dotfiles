@@ -4,6 +4,7 @@
 
   home.packages = with pkgs; [
     abiword
+    anki-bin
     discord
     fzf
     filezilla
