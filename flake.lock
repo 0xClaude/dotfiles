@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "beaver-notes-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1763651480,
+        "narHash": "sha256-tDzOataxMwDP24ra7is1BBhPjZ8a4IufxPJIHk4U8P8=",
+        "owner": "Beaver-Notes",
+        "repo": "Beaver-Notes",
+        "rev": "18ffbc444feab4011ab6c0b203d1480f2a13b94f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Beaver-Notes",
+        "repo": "Beaver-Notes",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -54,6 +70,7 @@
     },
     "root": {
       "inputs": {
+        "beaver-notes-src": "beaver-notes-src",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",

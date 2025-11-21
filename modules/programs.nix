@@ -5,22 +5,17 @@
   home.packages = with pkgs; [
     abiword
     anki-bin
+    beaver-notes
     discord
-    fzf
     filezilla
     google-chrome
-    imagemagick
     joplin-desktop
     libreoffice
-    mpv
     mullvad-vpn
     nextcloud-client
-    qalculate-qt
     qbittorrent
     slack
-    speedtest-cli
     thunderbird
-    tig
     ticktick
     veracrypt
     vorta
