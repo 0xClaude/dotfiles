@@ -22,6 +22,8 @@
       url = "github:Beaver-Notes/Beaver-Notes";
       flake = false; # repo is not a flake
     };
+
+		npins.url = "github:andir/npins";
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, beaver-notes-src, ... }: {
@@ -44,12 +46,12 @@
 				{
 					nixpkgs.config.allowUnfree = true;
 
-					nixpkgs.overlays = [
-						(import ./overlays/beaver-notes.nix {
-							pkgs = import nixpkgs { system = "x86_64-linux"; };
-							beaver-src = beaver-notes-src;
-						})
-					];
+					# nixpkgs.overlays = [
+					# 	(import ./overlays/beaver-notes.nix {
+					# 		pkgs = import nixpkgs { system = "x86_64-linux"; };
+					# 		beaver-src = beaver-notes-src;
+					# 	})
+					# ];
 
 					home-manager = {
 						useGlobalPkgs = true;
