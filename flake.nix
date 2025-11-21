@@ -19,11 +19,10 @@
 
 		# Beaver-notes
 		beaver-notes-src = {
-      url = "github:Beaver-Notes/Beaver-Notes";
-      flake = false; # repo is not a flake
-    };
+			url = "github:Beaver-Notes/Beaver-Notes";
+			flake = false;
+		};
 
-		npins.url = "github:andir/npins";
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, beaver-notes-src, ... }: {
@@ -33,6 +32,8 @@
 			system = "x86_64-linux";
 
 			specialArgs = {
+				sources = import ./pins;
+				
 				inherit silentSDDM;
 				unstablePkgs = import nixpkgs-unstable {
 					system = "x86_64-linux";

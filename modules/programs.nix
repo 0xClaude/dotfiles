@@ -5,7 +5,6 @@
   home.packages = with pkgs; [
     abiword
     anki-bin
-    beaver-notes
     discord
     filezilla
     google-chrome
