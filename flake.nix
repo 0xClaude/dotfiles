@@ -33,7 +33,7 @@
 
 			specialArgs = {
 				sources = import ./pins;
-				
+
 				inherit silentSDDM;
 				unstablePkgs = import nixpkgs-unstable {
 					system = "x86_64-linux";
@@ -47,12 +47,12 @@
 				{
 					nixpkgs.config.allowUnfree = true;
 
-					# nixpkgs.overlays = [
-					# 	(import ./overlays/beaver-notes.nix {
-					# 		pkgs = import nixpkgs { system = "x86_64-linux"; };
-					# 		beaver-src = beaver-notes-src;
-					# 	})
-					# ];
+					nixpkgs.overlays = [
+						(import ./overlays/beaver-notes.nix {
+							pkgs = import nixpkgs { system = "x86_64-linux"; };
+							beaver-src = beaver-notes-src;
+						})
+					];
 
 					home-manager = {
 						useGlobalPkgs = true;
