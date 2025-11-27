@@ -3,11 +3,11 @@
     "beaver-notes-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1763749915,
-        "narHash": "sha256-yLKEY9IkJwhG2NqrpCYafj3ZxBc5xuZlnjwdk7y/iuA=",
+        "lastModified": 1764152273,
+        "narHash": "sha256-xR8lrwsQ4rB/2E4FmaEWFxGH4xHxgKgNT/gzssLkkFA=",
         "owner": "Beaver-Notes",
         "repo": "Beaver-Notes",
-        "rev": "3d819ad959b21d72f2db74c0fe274e4a25d30c95",
+        "rev": "e458d79728b430797888953f97e8d13d3fb6d058",
         "type": "github"
       },
       "original": {
