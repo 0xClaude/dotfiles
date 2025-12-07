@@ -23,6 +23,8 @@
 
   programs.vim.defaultEditor = true;
 
+  programs.niri.enable = true;
+
   home.packages = with pkgs; [
     # Add programs here
   ];
