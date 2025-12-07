@@ -14,7 +14,5 @@
     tig
     timeshift
     zsh-autosuggestions
-    niri
-    xwayland-satellite
   ];
 }
