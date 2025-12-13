@@ -1,5 +1,8 @@
-{ config, pkgs, dankMaterialShell, niri, ... }:
-
+{ config, pkgs, pkgsUnstable, inputs, ... }:
+let
+  dankMaterialShell = inputs.dankMaterialShell;
+  niri = inputs.niri;
+in
 {
   home.username = "claude";
   home.homeDirectory = "/home/claude";
@@ -17,12 +20,15 @@
 
   programs.git = {
     enable = true;
-    userName = "Claude BIVER";
-    userEmail = "claude.biver@pm.me";
-    extraConfig.init.defaultBranch = "main";
+    settings = {
+      user = {
+        name = "Claude BIVER";
+        email = "claude.biver@pm.me";
+      };
+      init.defaultBranch = "main";
+    };
   };
 
-  programs.ssh.enable = true;
   services.ssh-agent.enable = true;
 
   programs.vim.defaultEditor = true;
@@ -34,8 +40,6 @@
       enableSpawn = true;      # Auto-start DMS with niri
     };
   };
-
-  systemd.user.services.niri-flake-polkit.enable = false;
 
   home.packages = with pkgs; [
     # Add programs here

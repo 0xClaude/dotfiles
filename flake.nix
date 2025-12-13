@@ -2,49 +2,58 @@
 	description = "NixOS";
 
 	inputs = {
-		nixpkgs.url = "nixpkgs/nixos-25.05";
-
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
 		home-manager = {
-			url = "github:nix-community/home-manager/release-25.05";
-			inputs.nixpkgs.follows = "nixpkgs";
+			url = "github:nix-community/home-manager";
+			inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 
 		silentSDDM = {
 			url = "github:uiriansan/SilentSDDM";
-			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 
 		# DMS
 		dgop = {
       url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.dgop.follows = "dgop";
     };
 
 		niri = {
   		url = "github:sodiboo/niri-flake";
-  		inputs.nixpkgs.follows = "nixpkgs";
+  		inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, dankMaterialShell, niri, ... }: {
+	outputs = inputs @ { 
+		self, 
+		nixpkgs, 
+		nixpkgs-unstable, 
+		home-manager, 
+		silentSDDM, 
+		dankMaterialShell, 
+		niri, 
+		... 
+	}: 
+	let system = "x86_64-linux"; in
+		{
 
 		nixosConfigurations.nebula = nixpkgs.lib.nixosSystem {
 
-			system = "x86_64-linux";
+			system = system;
 
 			specialArgs = {
 				inherit silentSDDM;
 				unstablePkgs = import nixpkgs-unstable {
-					system = "x86_64-linux";
+					system = system;
 					config.allowUnfree = true;
 				};
 			};
@@ -60,7 +69,11 @@
 						useUserPackages = true;
 
 						extraSpecialArgs = {
-							inherit dankMaterialShell niri;
+							inherit inputs;
+							pkgsUnstable = import nixpkgs-unstable {
+								system = system;
+								config.allowUnfree = true;
+							};
 						};
 
 						users.claude = import ./home.nix;
