@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, dankMaterialShell, niri, ... }:
 
 {
   home.username = "claude";
@@ -9,6 +9,10 @@
     ./modules/system.nix
     ./modules/programs.nix
     ./modules/emacs.nix
+
+    niri.homeModules.niri
+    dankMaterialShell.homeModules.dankMaterialShell.default
+    dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
 
   programs.git = {
@@ -22,6 +26,16 @@
   services.ssh-agent.enable = true;
 
   programs.vim.defaultEditor = true;
+
+  programs.dankMaterialShell = {
+    enable = true;
+    niri = {
+      enableKeybinds = true;   # Automatic keybinding configuration
+      enableSpawn = true;      # Auto-start DMS with niri
+    };
+  };
+
+  systemd.user.services.niri-flake-polkit.enable = false;
 
   home.packages = with pkgs; [
     # Add programs here

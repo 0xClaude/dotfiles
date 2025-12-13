@@ -16,17 +16,32 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		# DMS
+		dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+    };
+
+		niri = {
+  		url = "github:sodiboo/niri-flake";
+  		inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, ... }: {
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, dankMaterialShell, niri, ... }: {
 
 		nixosConfigurations.nebula = nixpkgs.lib.nixosSystem {
 
 			system = "x86_64-linux";
 
 			specialArgs = {
-				sources = import ./pins;
-
 				inherit silentSDDM;
 				unstablePkgs = import nixpkgs-unstable {
 					system = "x86_64-linux";
@@ -43,8 +58,14 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
+
+						extraSpecialArgs = {
+							inherit dankMaterialShell niri;
+						};
+
 						users.claude = import ./home.nix;
 						backupFileExtension = "backup";
+
 					};
 				}
 			];
