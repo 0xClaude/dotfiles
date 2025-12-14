@@ -15,6 +15,7 @@
       ep.nix-mode
     ]);
 
+    # TODO this belongs into its own config file
     extraConfig = ''
       ;; Ensure use-package is loaded
       (require 'use-package)
