@@ -1,7 +1,6 @@
 input {
     touchpad {
         tap
-        disable-while-typing true
     }
 }
 
@@ -12,9 +11,7 @@ hotkey-overlay {
 binds {
     Super+Return { spawn "alacritty"; }
     Super+Q { close-window; }
-    Super+E { spawn "yazi"; }
-    // Super+D { spawn "dank-material-shell --overview"; }
-    Mod+Shift+R { reload-config; }
+    Super+E { spawn "alacritty" "-e" "yazi"; }
     Super+L { spawn "swaylock"; }
     Alt+Ctrl+Right { focus-column-right; }
     Alt+Ctrl+Left { focus-column-left; }
@@ -47,7 +44,7 @@ window-rule {
     // block-out-from "screen-capture"
     variable-refresh-rate true
     default-column-display "tabbed"
-    // default-floating-position x=100 y=200 relative-to="bottom-left"
+    default-floating-position x=100 y=200 relative-to="bottom-left"
     scroll-factor 0.75
 
     focus-ring {
@@ -61,7 +58,7 @@ window-rule {
     }
 
     shadow {
-        // on
+        on
         off
         softness 40
         spread 5
