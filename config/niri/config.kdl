@@ -8,6 +8,7 @@ binds {
     Super+Return { spawn "alacritty"; }
     Super+Q { close-window; }
     Super+D { spawn "dank-material-shell --overview"; }
+    Super+L { spawn "swaylock"; }
 }
 
 window-rule {

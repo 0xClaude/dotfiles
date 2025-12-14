@@ -12,6 +12,7 @@
     nh
     oh-my-zsh
     qalculate-qt
+    swaylock
     tig
     timeshift
     zsh-autosuggestions
