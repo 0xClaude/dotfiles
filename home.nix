@@ -34,6 +34,25 @@ in
     enable = true;
   };
 
+  systemd.user.services.dms-shell = {
+    Unit = {
+      Description = "DMS Shell";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+
+    Service = {
+      ExecStart = "${pkgs.dms-shell}/bin/dms-shell run -d";
+      Restart = "always";
+      RestartSec = 1;
+    };
+
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
+
   home.packages = with pkgs; [
     # Add programs here
   ];
