@@ -17,5 +17,5 @@
     timeshift
     yazi
     zsh-autosuggestions
-  ];swaylock
+  ];
 }
