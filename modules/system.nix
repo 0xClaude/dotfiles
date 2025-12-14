@@ -15,6 +15,7 @@
     swaylock
     tig
     timeshift
+    yazi
     zsh-autosuggestions
-  ];
+  ];swaylock
 }
