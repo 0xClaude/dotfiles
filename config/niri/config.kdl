@@ -1,6 +1,7 @@
 input {
     touchpad {
         tap
+        disable-while-typing true
     }
 }
 
@@ -11,8 +12,9 @@ hotkey-overlay {
 binds {
     Super+Return { spawn "alacritty"; }
     Super+Q { close-window; }
-    Super+E { spawn "dolphin"; }
-    Super+D { spawn "dank-material-shell --overview"; }
+    Super+E { spawn "yazi"; }
+    // Super+D { spawn "dank-material-shell --overview"; }
+    Mod+Shift+R { reload-config; }
     Super+L { spawn "swaylock"; }
     Alt+Ctrl+Right { focus-column-right; }
     Alt+Ctrl+Left { focus-column-left; }
@@ -52,9 +54,6 @@ window-rule {
         // off
         on
         width 2
-        active-gradient from="#80c8ff" to="#bbddff" angle=45
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-        urgent-gradient from="#800" to="#a33" angle=45
     }
 
     border {
@@ -68,21 +67,22 @@ window-rule {
         spread 5
         offset x=0 y=5
         draw-behind-window true
-        color "#00000064"
-        // inactive-color "#00000064"
     }
 
     tab-indicator {
-        active-color "red"
-        inactive-color "gray"
-        urgent-color "blue"
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-        // urgent-gradient from="#800" to="#a33" angle=45
+        
+        // active-color "red"
+        // inactive-color "gray"
+        // urgent-color "blue"
     }
 
     geometry-corner-radius 12
     clip-to-geometry true
     tiled-state true
 }
+
+// include DMS keybinds
+include "dms/alttab.kdl"
 include "dms/binds.kdl"
+include "dms/colors.kdl"
+include "dms/layout.kdl"
