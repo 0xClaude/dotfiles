@@ -1,0 +1,10 @@
+input {
+    touchpad {
+        tap
+        dwt
+    }
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
