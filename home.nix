@@ -1,7 +1,6 @@
 { config, pkgs, pkgsUnstable, inputs, ... }:
 let
   dankMaterialShell = inputs.dankMaterialShell;
-  niri = inputs.niri;
 in
 {
   home.username = "claude";
@@ -14,7 +13,6 @@ in
     ./modules/emacs.nix
 
     dankMaterialShell.homeModules.dankMaterialShell.default
-    # dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
 
   programs.git = {
