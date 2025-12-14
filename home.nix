@@ -13,9 +13,8 @@ in
     ./modules/programs.nix
     ./modules/emacs.nix
 
-    niri.homeModules.niri
     dankMaterialShell.homeModules.dankMaterialShell.default
-    dankMaterialShell.homeModules.dankMaterialShell.niri
+    # dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
 
   programs.git = {
@@ -35,10 +34,6 @@ in
 
   programs.dankMaterialShell = {
     enable = true;
-    niri = {
-      enableKeybinds = true;   # Automatic keybinding configuration
-      enableSpawn = true;      # Auto-start DMS with niri
-    };
   };
 
   home.packages = with pkgs; [
@@ -48,4 +43,7 @@ in
   home.file.".config/alacritty".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/alacritty";
     
+  home.file.".config/niri".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/niri";
+
 }

@@ -6,6 +6,7 @@
     fzf
     imagemagick
     mpv
+    niri
     nix-search
     ncdu
     nh
