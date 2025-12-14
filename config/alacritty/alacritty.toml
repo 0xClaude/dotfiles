@@ -4,8 +4,5 @@ opacity=0.9
 
 [general]
 import = [
-  # uncomment the flavour you want below:
-  #"~/.config/alacritty/catppuccin-frappe.toml"
-  #"~/.config/alacritty/themes/nord.toml"
   "~/.config/alacritty/dank-theme.toml"
 ]
