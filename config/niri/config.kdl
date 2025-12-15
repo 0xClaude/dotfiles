@@ -1,4 +1,5 @@
 include "configs/input.kdl"
+include "configs/output.kdl"
 include "configs/binds.kdl"
 include "configs/window-rules.kdl"
 
@@ -7,3 +8,6 @@ include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/colors.kdl"
 include "dms/layout.kdl"
+
+// autostart
+spawn-at-startup "kanshi"

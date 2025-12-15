@@ -1,0 +1,4 @@
+output "HDMI-A-1" {
+  position x=1280 y=-1024
+  focus-at-startup
+}
