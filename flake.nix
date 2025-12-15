@@ -30,6 +30,11 @@
   		url = "github:sodiboo/niri-flake";
   		inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
+		
+		vicinae = {
+			url = "github:vicinaehq/vicinae";
+			inputs.nixpkgs.follows = "nixpkgs-unstable";
+		};
 
 	};
 
@@ -41,6 +46,7 @@
 		silentSDDM, 
 		dankMaterialShell, 
 		niri, 
+		vicinae,
 		... 
 	}: 
 	let system = "x86_64-linux"; in
