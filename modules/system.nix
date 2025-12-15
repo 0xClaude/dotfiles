@@ -6,6 +6,7 @@
     fzf
     gparted
     imagemagick
+    kanshi
     mpv
     niri
     nix-search
