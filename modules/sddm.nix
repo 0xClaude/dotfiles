@@ -1,6 +1,6 @@
-{ config, pkgs, silentSDDM, ... }:
+{ config, pkgs, inputs, ... }:
 let
-  sddm-theme = silentSDDM.packages.${pkgs.system}.default.override {
+  sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
     theme = "default"; # Customize: "rei", "ken", "silvia", "catppuccin-mocha", etc.
   };
 in

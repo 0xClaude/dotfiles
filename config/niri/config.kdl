@@ -11,3 +11,4 @@ include "dms/layout.kdl"
 
 // autostart
 spawn-at-startup "kanshi"
+spawn-at-startup "dms"

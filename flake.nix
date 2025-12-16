@@ -2,38 +2,38 @@
 	description = "NixOS";
 
 	inputs = {
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";
-			inputs.nixpkgs.follows = "nixpkgs-unstable";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		silentSDDM = {
 			url = "github:uiriansan/SilentSDDM";
-			inputs.nixpkgs.follows = "nixpkgs-unstable";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		# DMS
 		dgop = {
       url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.dgop.follows = "dgop";
     };
 
 		niri = {
   		url = "github:sodiboo/niri-flake";
-  		inputs.nixpkgs.follows = "nixpkgs-unstable";
+  		inputs.nixpkgs.follows = "nixpkgs";
 		};
 		
 		vicinae = {
 			url = "github:vicinaehq/vicinae";
-			inputs.nixpkgs.follows = "nixpkgs-unstable";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 	};
@@ -41,12 +41,7 @@
 	outputs = inputs @ { 
 		self, 
 		nixpkgs, 
-		nixpkgs-unstable, 
 		home-manager, 
-		silentSDDM, 
-		dankMaterialShell, 
-		niri, 
-		vicinae,
 		... 
 	}: 
 	let system = "x86_64-linux"; in
@@ -57,11 +52,7 @@
 			system = system;
 
 			specialArgs = {
-				inherit silentSDDM;
-				unstablePkgs = import nixpkgs-unstable {
-					system = system;
-					config.allowUnfree = true;
-				};
+				inherit inputs;
 			};
 
 			modules = [
@@ -76,10 +67,6 @@
 
 						extraSpecialArgs = {
 							inherit inputs;
-							pkgsUnstable = import nixpkgs-unstable {
-								system = system;
-								config.allowUnfree = true;
-							};
 						};
 
 						users.claude = import ./home.nix;

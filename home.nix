@@ -1,7 +1,7 @@
 { config, pkgs, pkgsUnstable, inputs, ... }:
 let
   dankMaterialShell = inputs.dankMaterialShell;
-  vicinae = inputs.vicinae;
+  # vicinae = inputs.vicinae;
 in
 {
   home.username = "claude";
@@ -14,7 +14,7 @@ in
     ./modules/emacs.nix
 
     dankMaterialShell.homeModules.dankMaterialShell.default
-    vicinae.homeManagerModules.default
+    #vicinae.homeManagerModules.default
   ];
 
   programs.git = {
@@ -36,10 +36,10 @@ in
     enable = true;
   };
 
-  services.vicinae = {
-    enable = true; # default: false
-    autoStart = true; # default: true
-  };
+  # services.vicinae = {
+  #   enable = true; # default: false
+  #   autoStart = true; # default: true
+  # };
 
   systemd.user.services.dms-shell = {
     Unit = {
