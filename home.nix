@@ -1,7 +1,6 @@
 { config, pkgs, pkgsUnstable, inputs, ... }:
 let
   dankMaterialShell = inputs.dankMaterialShell;
-  # vicinae = inputs.vicinae;
 in
 {
   home.username = "claude";
@@ -35,11 +34,6 @@ in
   programs.dankMaterialShell = {
     enable = true;
   };
-
-  # services.vicinae = {
-  #   enable = true; # default: false
-  #   autoStart = true; # default: true
-  # };
 
   systemd.user.services.dms-shell = {
     Unit = {
