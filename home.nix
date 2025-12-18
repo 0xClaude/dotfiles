@@ -12,8 +12,7 @@ in
     ./modules/programs.nix
     ./modules/emacs.nix
 
-    dankMaterialShell.homeModules.dankMaterialShell.default
-    #vicinae.homeManagerModules.default
+    dankMaterialShell.homeModules.dank-material-shell
   ];
 
   programs.git = {
@@ -31,7 +30,7 @@ in
 
   programs.vim.defaultEditor = true;
 
-  programs.dankMaterialShell = {
+  programs.dank-material-shell = {
     enable = true;
   };
 
