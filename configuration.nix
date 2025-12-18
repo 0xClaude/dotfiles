@@ -14,6 +14,8 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # Only keep 5 boot entries
+  boot.loader.systemd-boot.configurationLimit = 5;
 
   # Use the latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -98,7 +100,15 @@
   };
 
   # Experimental features
-  nix.settings = {
+  nix = {
+
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+    };
+
+    settings = {
     experimental-features = [ "nix-command" "flakes" ];
 
     substituters = [
