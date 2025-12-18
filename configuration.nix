@@ -111,6 +111,8 @@
     settings = {
     experimental-features = [ "nix-command" "flakes" ];
 
+      builders-use-substitutes = true;
+
     substituters = [
       "https://cache.nixos.org"
       "https://nix-community.cachix.org"
@@ -119,11 +121,12 @@
 
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Z9iH1tZ+8wE5v5Wl1vV3zj9Y="
-      "niri.cachix.org-1:3vKq7gXn3D1kJ+1m9cV8lH+Zb9wXnZC0zZ0sZ9C2Q="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
     ];
 
     trusted-users = [ "root" "claude" ];
+    }
   };
 
   # Configure keymap in X11
