@@ -126,7 +126,7 @@
       ];
 
       trusted-users = [ "root" "claude" ];
-    }
+    };
   };
 
   # Configure keymap in X11
