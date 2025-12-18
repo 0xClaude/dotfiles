@@ -1,4 +1,4 @@
-{ config, pkgs, pkgsUnstable, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   dankMaterialShell = inputs.dankMaterialShell;
 in
