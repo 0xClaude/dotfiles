@@ -10,7 +10,6 @@
     google-chrome
     joplin-desktop
     libreoffice
-    logseq
     mullvad-vpn
     nextcloud-client
     qbittorrent
