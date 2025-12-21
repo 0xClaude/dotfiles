@@ -13,6 +13,7 @@
     mullvad-vpn
     nextcloud-client
     qbittorrent
+    qownnotes
     slack
     thunderbird
     ticktick
