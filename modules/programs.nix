@@ -11,6 +11,7 @@
     joplin-desktop
     libreoffice
     mullvad-vpn
+    nb
     nextcloud-client
     qbittorrent
     qownnotes
@@ -20,5 +21,6 @@
     veracrypt
     vorta
     vscode
+    zettlr
   ];
 }
