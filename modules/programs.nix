@@ -9,6 +9,7 @@
     filezilla
     google-chrome
     joplin-desktop
+    ledger-live-desktop
     libreoffice
     mullvad-vpn
     nb
