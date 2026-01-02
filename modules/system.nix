@@ -11,6 +11,7 @@
     niri
     nix-search
     ncdu
+    ntfs3g
     nh
     oh-my-zsh
     qalculate-qt
